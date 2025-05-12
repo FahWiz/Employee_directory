@@ -5,7 +5,7 @@ const port=3000;
 
 app.use(express.json());
 
-app.use('/',employeeRoutes);
+app.use('/api',employeeRoutes);
 
 app.get('/',(req,res)=>{
     res.send('Employee Directory API is Running XD!');
