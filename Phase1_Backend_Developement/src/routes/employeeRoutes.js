@@ -29,12 +29,12 @@ const {
 
 router.post('/login', loginUser);
 router.post('/register', registerUser);
-router.get('/employees',authenticateToken, authorizeRoles('employee'),  getAllEmployees);
+router.get('/employees',authenticateToken, getAllEmployees);
 router.get('/employees/:id',authenticateToken, authorizeRoles('admin'),  getEmployeeById);
 router.post('/employees',authenticateToken, authorizeRoles('admin'),  createEmployee);
-router.put('/employees/:id',authenticateToken, authorizeRoles('admin'),  updateEmployee);
+router.put('/employees/:id',authenticateToken,  updateEmployee);
 router.delete('/employees/:id',authenticateToken, authorizeRoles('admin'),  deleteEmployee);
-router.put('/employees/:id/password',authenticateToken, authorizeRoles('admin'),  changePassword);
+router.put('/employees/:id/password',authenticateToken,changePassword);
 router.get('/stats/employees',authenticateToken, authorizeRoles('admin'),  getEmployeeStats); // total employees
 router.get('/stats/employees-by-department',authenticateToken, authorizeRoles('admin'),  getDepartmentStats); // employees per department
 
